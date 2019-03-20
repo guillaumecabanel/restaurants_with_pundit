@@ -1,0 +1,7 @@
+<div class="card-product">
+  <%= image_tag "http://lorempixel.com/200/200/food/#{restaurant.id}"%>
+  <div class="card-product-infos">
+    <h2><%= restaurant.name %></h2>
+    <p>Owned by <%= restaurant.user.email %></p>
+  </div>
+</div>

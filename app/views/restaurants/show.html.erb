@@ -1,11 +1,4 @@
-<p>
-  <strong>Name:</strong>
-  <%= @restaurant.name %>
-</p>
+<%= render 'card', restaurant: @restaurant %>
 
-<p>
-  <strong>User:</strong>
-  <%= @restaurant.user.email %>
-</p>
-
+<br>
 <%= link_to 'Back', restaurants_path %>

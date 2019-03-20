@@ -3,14 +3,8 @@
 <% @restaurants.each do |restaurant| %>
   <div class="row">
     <div class="col-10">
-      <%= link_to restaurant_path(restaurant), class:"card-product" do %>
-        
-          <%= image_tag "http://lorempixel.com/200/200/food/#{restaurant.id}"%>
-          <div class="card-product-infos">
-            <h2><%= restaurant.name %></h2>
-            <p>Owned by <%= restaurant.user.email %></p>
-          </div>
-        
+      <%= link_to restaurant_path(restaurant), class:"card-product-link" do %>
+        <%= render 'card', restaurant: restaurant %>
       <% end %>
     </div>
     <div class="col-2">
@@ -18,6 +12,8 @@
       <%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-flat btn-sm btn-danger btn-block" %>
     </div>
   </div>
+
+  <br>
 <% end %>
 
 <br>
