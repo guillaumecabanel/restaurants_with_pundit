@@ -25,16 +25,16 @@ class RestaurantPolicy < ApplicationPolicy
     # record <=> l'argument passé à `authorize` dans le controller
     # record <=> @restaurant
 
-    restaurant_owner?
+    restaurant_owner_or_admin?
   end
 
   def destroy?
-    restaurant_owner?
+    restaurant_owner_or_admin?
   end
 
   private
 
-  def restaurant_owner?
-    record.user == user
+  def restaurant_owner_or_admin?
+    record.user == user || user.admin
   end
 end
